@@ -6,7 +6,7 @@ const app = express()
 const PORT = process.env.PORT || 8080
 
 app.get("/", (_: any, res: Response) => {
-	res.send("Hello from docker")
+	res.send("Hello from docker and typescript")
 })
 
 app.listen(PORT, () => {
