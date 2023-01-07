@@ -1,4 +1,4 @@
-FROM node
+FROM node as build
 WORKDIR /app
 
 COPY package*.json ./
@@ -9,12 +9,15 @@ RUN npm install -g typescript
 
 COPY . .
 
-##RUN npm run build
 RUN tsc -b
 
+FROM node
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --production
+
+COPY --from=build /app/dist ./dist
 COPY .env ./dist
-
-
 
 WORKDIR ./dist
 
