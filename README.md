@@ -30,5 +30,6 @@ It will generate a "docker image id"...
 It will run a container from a docker image.
 
 ```docker run -p port-to-run-on-ur-machine:process-port-from-docker "docker image name/docker image id"
+```
 
 It will use a terminal and that terminal will not be usable, but u can use the -d flag on docker run so it keeps running the container "on background" and do not keep that terminal unusable.
